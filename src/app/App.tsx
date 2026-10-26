@@ -1,6 +1,4 @@
 import React from "react";
-// @ts-expect-error CSS is loaded by the bundler; TypeScript has no CSS module declaration.
-import "../css/app.css";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { Link, Route, Router, Switch, useLocation } from "react-router-dom";
 import { HomePage } from "./screens/homePage";
@@ -10,6 +8,11 @@ import { UserPage } from "./screens/userPage";
 import { HomeNavbar } from "./components/headers/HomeNavbar";
 import { OtherNavbar } from "./components/headers/OtherNavbar";
 import { Footer } from "./components/footer";
+// @ts-expect-error CSS files are loaded by the bundler and have no TypeScript declarations.
+import "../css/app.css";
+// @ts-expect-error CSS files are loaded by the bundler and have no TypeScript declarations.
+import "../css/navbar.css";
+import { HelpPage } from "./screens/helpPage";
 
 function App() {
   const location = useLocation();
@@ -26,6 +29,9 @@ function App() {
         </Route>
         <Route path="/member-page">
           <UserPage />
+        </Route>
+        <Route path="/help">
+          <HelpPage />
         </Route>
         <Route path="/">
           <HomePage />
