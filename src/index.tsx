@@ -8,9 +8,9 @@ import reportWebVitals from "./reportWebVitals";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./app/MaterialTheme";
+import { BrowserRouter as Router } from "react-router-dom";
 // @ts-ignore CSS is loaded by the bundler and has no TypeScript declarations.
 import "./css/index.css";
-import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
