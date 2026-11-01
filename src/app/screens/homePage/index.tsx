@@ -1,12 +1,10 @@
 import React from "react";
-import { Container } from "@mui/material";
 import Statistics from "./Statistics";
 import PopularDishes from "./PopularDishes";
 import NewDishes from "./NewDishes";
 import Advertisement from "./Advertisement";
 import ActiveUsers from "./ActiveUsers";
 import Events from "./Events";
-// @ts-expect-error CSS files are loaded by the bundler and have no TypeScript declarations.
 import "../../../css/home.css";
 
 export default function HomePage() {

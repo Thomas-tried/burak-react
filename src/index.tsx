@@ -4,20 +4,13 @@ import { Provider } from "react-redux";
 import { store } from "./app/store";
 import App from "./app/App";
 import reportWebVitals from "./reportWebVitals";
-// @ts-ignore CSS is loaded by the bundler and has no TypeScript declarations.
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./app/MaterialTheme";
 import { BrowserRouter as Router } from "react-router-dom";
-// @ts-ignore CSS is loaded by the bundler and has no TypeScript declarations.
 import "./css/index.css";
 
-const container = document.getElementById("root");
-
-if (!container) {
-  throw new Error("Root element not found");
-}
-
+const container = document.getElementById("root")!;
 const root = createRoot(container);
 
 root.render(

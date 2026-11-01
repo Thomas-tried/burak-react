@@ -4,13 +4,14 @@ import Basket from "./Basket";
 
 export default function HomeNavbar() {
   const authMember = null;
+
   return (
     <div className="home-navbar">
       <Container className="navbar-container">
         <Stack className="menu">
           <Box>
             <NavLink to="/">
-              <img className="brand-logo" src="/icons/burak.svg" />
+              <img className="brand-logo" src="/icons/bumarak.svg" />
             </NavLink>
           </Box>
           <Stack className="links">
@@ -44,6 +45,7 @@ export default function HomeNavbar() {
               </NavLink>
             </Box>
             <Basket />
+
             {!authMember ? (
               <Box>
                 <Button variant="contained" className="login-button">
@@ -68,7 +70,7 @@ export default function HomeNavbar() {
             <Box className={"service-txt"}>24 hours service</Box>
             <Box className={"signup"}>
               {!authMember ? (
-                <Button variant={"contained"} className="signup-button">
+                <Button variant={"contained"} className={"signup-button"}>
                   SIGN UP
                 </Button>
               ) : null}

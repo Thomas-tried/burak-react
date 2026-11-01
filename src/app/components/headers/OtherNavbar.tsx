@@ -11,7 +11,7 @@ export default function OtherNavbar() {
         <Stack className="menu">
           <Box>
             <NavLink to="/">
-              <img className="brand-logo" src="/icons/burak.svg" />
+              <img className="brand-logo" src="/icons/bumarak.svg" />
             </NavLink>
           </Box>
           <Stack className="links">
@@ -43,6 +43,7 @@ export default function OtherNavbar() {
               </NavLink>
             </Box>
             <Basket />
+
             {!authMember ? (
               <Box>
                 <Button variant="contained" className="login-button">
