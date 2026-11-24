@@ -2,6 +2,7 @@ import { Box, Button, Container, Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
 import { CartItem } from "../../../lib/types/search";
+import { useGlobals } from "../../hooks/useGlobals";
 
 interface OtherNavbarProps {
   cartItems: CartItem[];
@@ -23,14 +24,14 @@ export default function OtherNavbar(props: OtherNavbarProps) {
     setSignupOpen,
     setLoginOpen,
   } = props;
-  const authMember = null;
+  const { authMember } = useGlobals();
   return (
     <div className="other-navbar">
       <Container className="navbar-container">
         <Stack className="menu">
           <Box>
             <NavLink to="/">
-              <img className="brand-logo" src="/icons/bumarak.svg" />
+              <img className="brand-logo" src="/icons/bumarak.svg" alt="smth" />
             </NavLink>
           </Box>
           <Stack className="links">
@@ -84,6 +85,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
                 className="user-avatar"
                 src={"/icons/default-user.svg"}
                 aria-haspopup={"true"}
+                alt="smth"
               />
             )}
           </Stack>

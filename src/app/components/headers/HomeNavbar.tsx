@@ -1,8 +1,10 @@
 import { Box, Button, Container, Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import { CartItem } from "../../../lib/types/search";
+import { useGlobals } from "../../hooks/useGlobals";
+import { serverApi } from "../../../lib/config";
 
 interface HomeNavbarProps {
   cartItems: CartItem[];
@@ -24,7 +26,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
     setSignupOpen,
     setLoginOpen,
   } = props;
-  const authMember = null;
+  const { authMember } = useGlobals();
 
   /** HANDLERS */
 
@@ -34,7 +36,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
         <Stack className="menu">
           <Box>
             <NavLink to="/">
-              <img className="brand-logo" src="/icons/bumarak.svg" />
+              <img className="brand-logo" src="/icons/bumarak.svg" alt="smth" />
             </NavLink>
           </Box>
           <Stack className="links">
@@ -88,8 +90,13 @@ export default function HomeNavbar(props: HomeNavbarProps) {
             ) : (
               <img
                 className="user-avatar"
-                src={"/icons/default-user.svg"}
+                src={
+                  authMember?.memberImage
+                    ? `${serverApi}/${authMember}`
+                    : "/icons/default-user.svg"
+                }
                 aria-haspopup={"true"}
+                alt="smth"
               />
             )}
           </Stack>
