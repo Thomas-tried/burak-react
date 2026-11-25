@@ -1,14 +1,84 @@
+/* ============================================================
+   HOME PAGE
+   ============================================================ */
+
 .homepage {
   width: 100%;
   height: auto;
+  background: var(--cream);
+}
+
+/* ---------- shared section title ---------- */
+.homepage .category-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--espresso);
+}
+
+.homepage .category-title::before {
+  margin-bottom: 12px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--paprika);
+}
+
+.homepage .category-title::after {
+  content: "";
+  margin-top: 18px;
+  width: 52px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--paprika);
+}
+
+.homepage .popular-dishes-frame .category-title::before {
+  content: "Guests' favourites";
+}
+.homepage .new-products-frame .category-title::before {
+  content: "Just added";
+}
+.homepage .active-users-frame .category-title::before {
+  content: "Our community";
+}
+.homepage .events-frame .category-title::before {
+  content: "What's on";
+}
+
+.homepage .no-data {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: none;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 34px;
+  color: var(--muted);
 }
 
 /** STATISTICS **/
 
 .homepage .static-frame {
   width: 100%;
-  height: 236px;
-  background: #343434;
+  height: auto;
+  padding: 44px 0;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(179, 69, 31, 0.3), transparent 40%),
+    var(--espresso);
 }
 
 .homepage .static-frame .info {
@@ -20,7 +90,7 @@
 }
 
 .homepage .static-frame .info .static-box {
-  width: 200px;
+  width: 220px;
   height: 116px;
   display: flex;
   flex-direction: column;
@@ -30,54 +100,47 @@
 
 .homepage .static-frame .info .static-box .static-num {
   text-align: center;
-  font-family: "Poppins";
-  font-size: 54px;
+  font-family: var(--font-display);
+  font-size: 60px;
   font-style: normal;
   font-weight: 600;
-  line-height: 80px;
-  color: #d7b686;
+  line-height: 76px;
+  letter-spacing: -0.02em;
+  color: var(--cream);
 }
 
 .homepage .static-frame .info .static-box .static-text {
   text-align: center;
-  font-family: "Poppins";
-  font-size: 20px;
+  font-family: var(--font-body);
+  font-size: 13px;
   font-style: normal;
-  font-weight: 500;
-  line-height: 30px;
-  color: #d7b586;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--paprika-light);
 }
 
 /** POPULAR DISHES **/
 
 .homepage .popular-dishes-frame {
   width: 100%;
-  height: 580px;
+  height: auto;
+  padding: 90px 0 100px;
   display: flex;
-  background: #f8f8ff;
+  background: var(--cream);
 }
 
 .homepage .popular-dishes-frame .popular-section {
-  margin-top: 45px;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.homepage .popular-dishes-frame .popular-section .category-title {
-  text-align: center;
-  font-family: "Roboto Serif";
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: 1.44px;
-  color: #000;
-}
-
 .homepage .popular-dishes-frame .popular-section .cards-frame {
   width: 100%;
-  margin-top: 43px;
+  margin-top: 56px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -91,94 +154,112 @@
 
 .homepage .popular-dishes-frame .cards-frame .card .card-cover {
   background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0) 200px
-    ),
-    linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 300px);
+    to top,
+    rgba(42, 25, 16, 0.94) 0%,
+    rgba(42, 25, 16, 0.45) 38%,
+    rgba(42, 25, 16, 0) 68%
+  );
 }
 
-.homepage .popular-dishes-frame .no-data {
-  width: 100%;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: capitalize;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 34px;
-  color: #e3c08d;
+/* the description strip at the bottom of every popular card */
+.homepage .popular-dishes-frame .cards-frame .card > :last-child {
+  border-top-color: rgba(242, 232, 218, 0.22);
+  background: rgba(42, 25, 16, 0.5);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+/** every product / member card on the home page **/
+
+.homepage .card {
+  --Card-radius: 26px;
+  overflow: hidden;
+  border-radius: 26px;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.homepage .card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
+.homepage .card img {
+  transition: transform 0.7s ease;
+}
+
+.homepage .card:hover img {
+  transform: scale(1.07);
 }
 
 /** NEW PRODUCTS **/
 
 .homepage .new-products-frame {
   width: 100%;
-  height: 605px;
-  background: #f8f8ff;
+  height: auto;
+  padding: 90px 0 100px;
+  background: var(--paper);
   display: flex;
 }
 
 .homepage .main {
-  margin-top: 45px;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.homepage .new-products-frame .category-title {
-  font-family: "Dancing Script";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 43px;
-}
-
 .homepage .new-products-frame .main .cards-frame {
   width: 100%;
-  margin: 47px 2px 2px 2px;
+  margin: 56px 2px 2px 2px;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .homepage .new-products-frame .main .card {
-  height: 335px;
+  height: auto;
   width: 290px;
   cursor: pointer;
+  background: #fffaf2;
+  border: 1px solid var(--cream-deep);
+  box-shadow: var(--shadow-sm);
 }
 
 .homepage .new-products-frame .product-sale {
   position: absolute;
-  margin-top: 10px;
+  top: 14px;
+  left: 14px;
+  margin-top: 0;
   z-index: 100;
-  width: 90px;
-  height: 30px;
+  width: auto;
+  height: auto;
+  padding: 5px 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ff9200;
-  box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 25px;
-  font-family: "Poppins";
+  background: var(--paprika);
+  box-shadow: 0 10px 20px -8px rgba(179, 69, 31, 0.8);
+  border-radius: 999px;
+  font-family: var(--font-body);
   font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 21px;
-  color: #f8f8ff;
+  font-weight: 700;
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: var(--cream);
 }
 
 .homepage .new-products-frame .product-detail {
   width: auto;
-  height: 49%;
+  height: auto;
+  padding: 14px 18px;
   display: flex;
   justify-content: center;
-  margin-top: -12px;
-  border-top: 1px solid;
-  border-color: #f8f8ff;
-  background-color: #fafbfb;
+  margin-top: 0;
+  border-top: 1px solid var(--cream-deep);
+  background-color: transparent;
 }
 
 .homepage .new-products-frame .product-detail .info {
@@ -190,59 +271,63 @@
 }
 
 .homepage .new-products-frame .product-detail .title {
-  width: 65px;
-  font-weight: 500;
+  width: 110px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--espresso);
 }
 
 .homepage .new-products-frame .product-detail .price {
   margin-left: 10px;
-  width: 20px;
-  font-weight: 500;
+  width: auto;
+  font-weight: 800;
+  color: var(--paprika);
 }
 
 .homepage .new-products-frame .product-detail .divider {
   margin: 0 10px 0 10px;
   width: 2px;
-  background-color: #d9d9d9;
+  background-color: var(--cream-deep);
 }
 
 .homepage .new-products-frame .product-detail .views {
   display: flex;
   align-items: center;
-  font-weight: 500;
-}
-
-.homepage .new-products-frame .no-data {
-  width: 100%;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: capitalize;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 34px;
-  color: #e3c08d;
+  font-weight: 600;
+  color: var(--muted);
 }
 
 /** ADVERTISEMENT **/
 
 .homepage .ads-restaurant-frame {
+  position: relative;
   width: 100%;
   height: 693px;
   display: flex;
   overflow: hidden;
   transform: perspective(0px);
-  box-shadow: -3px 0px 20px 14px #34343480;
+  background: var(--espresso-deep);
+}
+
+.homepage .ads-restaurant-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(42, 25, 16, 0.55) 0%,
+    rgba(42, 25, 16, 0) 28%,
+    rgba(42, 25, 16, 0) 68%,
+    rgba(42, 25, 16, 0.6) 100%
+  );
 }
 
 .homepage .ads-restaurant-frame .ads-video {
   width: 100%;
-  background: #0c0e12;
+  background: var(--espresso-deep);
   display: flex;
-  box-shadow: 0px -8px 90px rgb(215 215 255);
+  box-shadow: none;
   transform: scale(1.5);
   overflow: hidden;
 }
@@ -251,30 +336,28 @@
 
 .homepage .active-users-frame {
   width: 100%;
-  height: 550px;
-  background: #f8f8ff;
+  height: auto;
+  padding: 90px 0 100px;
+  background: var(--cream);
   display: flex;
 }
 
 .homepage .active-users-frame .main {
-  padding-top: 60px;
+  padding-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.homepage .active-users-frame .category-title {
-  font-family: "Dancing Script";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 43px;
 }
 
 .homepage .cards-frame {
   width: 100%;
   margin-top: 20px;
   flex-direction: row;
+}
+
+.homepage .active-users-frame .cards-frame {
+  margin-top: 56px;
+  justify-content: space-between;
 }
 
 .homepage .cards-frame .card {
@@ -284,42 +367,33 @@
   cursor: pointer;
 }
 
-.homepage .cards-frame .member-nickname {
-  font-size: medium;
-  text-align: center;
+.homepage .active-users-frame .cards-frame .card {
+  background: #fffaf2;
+  border: 1px solid var(--cream-deep);
+  box-shadow: var(--shadow-sm);
 }
 
-.homepage .cards-frame .no-data {
-  width: 100%;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: capitalize;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 34px;
-  color: #e3c08d;
+.homepage .cards-frame .member-nickname {
+  padding: 4px 0 6px;
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--espresso);
 }
 
 /** EVENTS **/
 
 .homepage .events-frame {
   width: 100%;
-  height: 745px;
-  background: #f8f8ff;
+  height: auto;
+  padding: 90px 0 90px;
+  background: var(--paper);
   display: flex;
 }
 
 .homepage .events-frame .category-title {
-  font-family: "Dancing Script";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 43px;
-  padding-top: 20px;
+  padding-top: 0;
 }
 
 .homepage .events-frame .events-main {
@@ -333,8 +407,8 @@
 
 .homepage .events-frame .events-main .events-text {
   width: auto;
-  height: 70px;
-  margin-bottom: 40px;
+  height: auto;
+  margin-bottom: 56px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -344,22 +418,48 @@
 .homepage .events-frame .events-main .prev-next-frame {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 250px;
-  margin: 40px 0 40px 0;
-  height: 25px;
+  margin: 44px 0 0 0;
+  height: 44px;
+}
+
+.homepage .events-frame .prev-next-frame .swiper-button-prev,
+.homepage .events-frame .prev-next-frame .swiper-button-next {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  margin: 0;
+  box-sizing: border-box;
+  width: 44px;
+  height: 44px;
+  padding: 11px;
+  cursor: pointer;
+  background: #fffaf2;
+  border: 1px solid var(--cream-deep);
+  border-radius: 50%;
+  transition: all 0.25s ease;
+}
+
+.homepage .events-frame .prev-next-frame .swiper-button-prev:hover,
+.homepage .events-frame .prev-next-frame .swiper-button-next:hover {
+  background: var(--espresso);
+  border-color: var(--espresso);
+  filter: invert(1);
 }
 
 .homepage .events-frame .dot-frame-pagination {
   position: relative;
   width: auto;
   display: flex;
+  align-items: center;
 }
 
 .homepage .events-frame .events-main .events-info {
   width: 100%;
-  height: 100%;
+  height: 520px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -372,31 +472,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 0.4s ease;
 }
 
 .homepage .events-frame .events-img {
   width: 100%;
   height: 100%;
   display: flex;
-  border-radius: 10px;
+  object-fit: cover;
+  border-radius: 26px;
   background-size: cover;
 }
 
 .homepage .events-frame .events-desc {
   position: absolute;
   margin-bottom: 7px;
-  padding: 10px;
+  padding: 16px 18px;
   display: flex;
   width: 90%;
   height: auto;
-  bottom: 5px;
-  background: #f8f8ff;
-  box-shadow: 0px 40px 30px rgba(25, 25, 46, 0.04);
-  border-radius: 8px;
+  bottom: 14px;
+  background: rgba(251, 246, 238, 0.94);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 24px 40px -18px rgba(42, 25, 16, 0.55);
+  border-radius: 20px;
 }
 
 .homepage .events-frame .events-desc .events-bott {
-  width: 97%;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -415,6 +519,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+}
+
+.homepage .events-frame .bott-left .event-title-speaker strong {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--espresso);
 }
 
 .homepage .events-frame .event-title-speaker .event-organizator {
@@ -424,52 +536,57 @@
 
 .homepage .events-frame .event-title-speaker .event-organizator img {
   width: 20px;
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 .homepage .events-frame .event-organizator .spec-text-author {
-  font-family: "GT Walsheim Pro";
+  margin: 0;
+  font-family: var(--font-body);
   font-style: normal;
-  line-height: 34px;
-  color: #140342;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 28px;
+  color: var(--paprika);
 }
 
 .homepage .events-frame .bott-left .text-desc {
-  margin-top: 10px;
-  font-family: "GT Walsheim Pro";
+  margin: 8px 0 0;
+  font-family: var(--font-body);
   font-style: normal;
   font-weight: 400;
-  font-size: 17px;
-  line-height: 26px;
-  color: #4f547b;
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--muted);
 }
 
 .homepage .events-frame .bott-left .bott-info {
-  margin-top: 10px;
+  margin-top: 12px;
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
   width: 100%;
-  height: 16px;
+  height: 18px;
 }
 
 .homepage .events-frame .bott-info .bott-info-main {
-  margin-left: 10px;
+  margin-left: 16px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   flex-direction: row;
   width: auto;
   height: 100%;
-  font-family: "GT Walsheim Pro";
+  font-family: var(--font-body);
   font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 13px;
   line-height: 16px;
-  color: #4f547b;
+  color: var(--muted);
 }
 
 .homepage .events-frame .bott-info .bott-info-main img {
-  margin-right: 10px;
+  margin-right: 7px;
+  width: 15px;
 }
 
 .homepage .events-frame .swiper-wrapper {
@@ -478,16 +595,39 @@
 }
 
 .homepage .events-frame .swiper-pagination-bullet {
-  margin-right: 5px;
+  margin-right: 6px;
   width: 8px;
   height: 8px;
   text-align: center;
   opacity: 1;
-  background: #f8f8ff;
+  background: rgba(59, 36, 24, 0.25);
   border-radius: 50%;
+  transition: all 0.3s ease;
 }
 
 .homepage .events-frame .swiper-pagination-bullet-active {
-  background: #343434;
-  border-radius: 50%;
+  width: 26px;
+  background: var(--paprika);
+  border-radius: 8px;
+}
+
+@media (max-width: 1100px) {
+  .homepage .popular-dishes-frame .popular-section .cards-frame,
+  .homepage .new-products-frame .main .cards-frame,
+  .homepage .active-users-frame .cards-frame {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .homepage .static-frame .info {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 30px;
+  }
+  .homepage .static-frame .info > span {
+    display: none;
+  }
+  .homepage .ads-restaurant-frame {
+    height: 420px;
+  }
 }

@@ -4,11 +4,14 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Footers = styled.div`
+  position: relative;
   width: 100%;
   height: 590px;
   display: flex;
-  background: #343434;
-  background-size: cover;
+  background:
+    radial-gradient(circle at 88% 0%, rgba(179, 69, 31, 0.28), transparent 42%),
+    #2a1910;
+  border-top: 4px solid #b3451f;
 `;
 
 export default function Footer() {

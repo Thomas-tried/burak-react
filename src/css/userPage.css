@@ -1,337 +1,452 @@
+/* ============================================================
+   MY PAGE
+   ============================================================ */
+
 .user-page {
-	width: 100%;
-	height: auto;
-	display: flex;
-	background: #f8f8ff;
-}
-
-.user-page .css-heg063-MuiTabs-flexContainer {
-	flex-direction: column;
-}
-
-.user-page .css-mn3ro6-MuiTabs-indicator {
-	height: 0px;
-	width: 0px;
-}
-
-.user-page .css-1ujnqem-MuiTabs-root {
-	width: 100%;
+  width: 100%;
+  height: auto;
+  display: flex;
+  background: var(--cream);
 }
 
 .user-page .my-page-frame {
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: row;
-	padding: 50px 0 50px 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 64px 0 90px 0;
 }
 
 .my-page-frame .my-page-left {
-	width: 70%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .my-page-left .menu-name {
-	width: 100%;
-	height: 70px;
-	display: flex;
-	justify-content: center;
-	border-bottom: 1px solid #f8f8ff;
-	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 45px;
-	color: #f8f8ff;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-bottom: none;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--espresso);
+}
+
+.my-page-left .menu-name::before {
+  content: "Your account";
+  margin-bottom: 12px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--paprika);
+}
+
+.my-page-left .menu-name::after {
+  content: "";
+  margin-top: 18px;
+  width: 52px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--paprika);
 }
 
 .my-page-left .menu-content {
-	margin-top: 10px;
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.my-page-left .write-content {
-	margin-top: 10px;
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
-}
-
+.my-page-left .write-content,
 .user-page .menu-content .post-content {
-	margin-top: 10px;
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .my-page-frame .my-page-right {
-	margin-left: 30px;
-	width: 30%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
+  margin-left: 0;
+  position: sticky;
+  top: 24px;
+  width: 360px;
+  flex-shrink: 0;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
+/* ---------- profile card (espresso) ---------- */
+
 .user-page .order-info-box {
-	position: relative;
-	padding: 20px;
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background: #f6f2ff;
-	box-shadow: 15px 14px 4px rgba(0, 0, 0, 0.25), inset -1px 0px 16px 13px rgb(24 23 112 / 20%);
-	border-radius: 16px;
+  position: relative;
+  padding: 34px 28px 30px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  color: var(--cream);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(179, 69, 31, 0.55), transparent 55%),
+    var(--espresso);
+  box-shadow: var(--shadow-md);
+  border-radius: 28px;
 }
 
 .user-page .order-info-box .settings-btn {
-	position: absolute;
-	top: 6%;
-	right: 19%;
-	cursor: pointer;
+  position: absolute;
+  top: 6%;
+  right: 8%;
+  cursor: pointer;
 }
 
 .user-page .order-info-box .order-user-img {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .user-page .order-info-box .order-user-img .order-user-avatar {
-	width: 150px;
-	height: 150px;
-	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-	border-radius: 37px;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border: 5px solid var(--cream);
+  border-radius: 50%;
+  background: var(--cream);
+  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.4));
 }
 
 .user-page .order-info-box .order-user-icon-box {
-	position: absolute;
-	padding: 5px;
-	width: 37px;
-	height: 37px;
-	top: 81%;
-	right: 0;
-	display: flex;
-	background: rgb(209 209 209 / 33%);
-	border-radius: 37px;
+  position: absolute;
+  padding: 7px;
+  width: 38px;
+  height: 38px;
+  top: 76%;
+  right: 2px;
+  display: flex;
+  box-sizing: border-box;
+  background: var(--paprika);
+  border: 3px solid var(--espresso);
+  border-radius: 50%;
+}
+
+.user-page .order-info-box .order-user-icon-box img {
+  width: 100%;
+  filter: brightness(0) invert(1);
 }
 
 .user-page .order-info-box .order-user-name {
-	margin-top: 10px;
-	font-family: 'Commissioner';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 28px;
-	line-height: 36px;
-	color: #08090d;
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 38px;
+  color: var(--cream);
 }
 
 .user-page .order-info-box .order-user-prof {
-	font-family: 'Commissioner';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 20px;
-	line-height: 36px;
-	color: #a1a1a1;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11.5px;
+  letter-spacing: 0.24em;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: var(--paprika-light);
+}
+
+.user-page .order-info-box .order-user-prof + .order-user-prof {
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-size: 14px;
+  color: var(--muted-on-dark);
 }
 
 .user-page .order-info-box .user-media-box {
-	margin-top: 10px;
-	width: 60%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+  margin-top: 18px;
+  padding-top: 18px;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid rgba(242, 232, 218, 0.2);
+}
+
+.user-page .order-info-box .user-media-box .MuiSvgIcon-root {
+  color: var(--cream);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user-page .order-info-box .user-media-box .MuiSvgIcon-root:hover {
+  color: var(--paprika-light);
+  transform: translateY(-3px);
 }
 
 .user-page .order-info-box .user-desc {
-	margin-top: 30px;
-	width: 90%;
-	display: flex;
-	justify-content: center;
-	font-family: 'DM Sans';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 24px;
-	color: #616164;
-}
-
-.user-page .order-info-box .css-1e3kzd4-MuiButtonBase-root-MuiButton-root {
-	margin-top: 15px;
-	min-width: 90%;
-	height: 44px;
-	text-transform: capitalize;
-	font-style: normal;
-	font-weight: 600;
-	font-size: 25px;
-	line-height: 38px;
-	color: #f8f8ff;
+  margin: 22px 0 0;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--muted-on-dark);
 }
 
 .user-page .menu-box img {
-	width: 25px;
+  width: 25px;
 }
 
 .user-page .menu-box span {
-	margin-left: 30px;
-	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 25px;
-	line-height: 38px;
-	color: #000000;
+  margin-left: 30px;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 38px;
+  color: var(--espresso);
 }
 
+/* ---------- settings form (paper card) ---------- */
+
 .user-page .settings {
-	width: 95%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 36px 38px 34px;
+  display: flex;
+  flex-direction: column;
+  background: #fffaf2;
+  border: 1px solid var(--cream-deep);
+  border-radius: 28px;
+  box-shadow: var(--shadow-sm);
 }
 
 .user-page .settings .input-frame {
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+  margin-top: 22px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .user-page .settings .short-input {
-	width: 49%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
+  width: 49%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .user-page .settings .long-input {
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
+
 .user-page .settings .spec-label {
-	font-family: 'Source Serif Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 25px;
-	color: #f8f8ff;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--espresso-soft);
 }
 
 .user-page .settings .spec-input {
-	position: relative;
-	margin-top: 10px;
-	padding-left: 20px;
-	width: 100%;
-	height: 54px;
-	border: none;
-	background: #f7f7f7;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	border-radius: 5px;
-	font-family: 'GT Walsheim Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 26px;
-	color: #4f547b;
+  position: relative;
+  margin-top: 8px;
+  padding: 0 20px;
+  width: 100%;
+  height: 54px;
+  box-sizing: border-box;
+  border: 1px solid var(--cream-deep);
+  background: var(--cream);
+  box-shadow: none;
+  border-radius: 14px;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 26px;
+  color: var(--espresso);
+  outline: none;
+  transition: all 0.2s ease;
 }
 
 .user-page .settings .spec-textarea {
-	position: relative;
-	margin-top: 10px;
-	padding: 20px;
-	width: 100%;
-	height: 200px;
-	border: none;
-	background: #f7f7f7;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	border-radius: 5px;
-	font-family: 'GT Walsheim Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 26px;
-	color: #4f547b;
+  position: relative;
+  margin-top: 8px;
+  padding: 18px 20px;
+  width: 100%;
+  height: 180px;
+  box-sizing: border-box;
+  border: 1px solid var(--cream-deep);
+  background: var(--cream);
+  box-shadow: none;
+  border-radius: 14px;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 26px;
+  color: var(--espresso);
+  outline: none;
+  resize: vertical;
+  transition: all 0.2s ease;
+}
+
+.user-page .settings .spec-input:focus,
+.user-page .settings .spec-textarea:focus {
+  background: #fff;
+  border-color: var(--paprika);
+  box-shadow: 0 0 0 4px rgba(179, 69, 31, 0.15);
 }
 
 .user-page .settings .member-media-frame {
-	margin-top: 25px;
-	position: relative;
-	padding: 10px;
-	width: 100%;
-	height: auto;
-	display: flex;
-	border-radius: 5px;
+  margin-top: 0;
+  position: relative;
+  padding: 18px 20px;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background: var(--cream);
+  border: 1px dashed rgba(59, 36, 24, 0.25);
+  border-radius: 20px;
 }
 
 .user-page .settings .member-media-frame .mb-image {
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
+  width: 92px;
+  height: 92px;
+  object-fit: cover;
+  border: 3px solid #fffaf2;
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
 }
 
-.user-page .settings .media_change-box {
-	position: relative;
-	margin-left: 20px;
-	width: auto;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
+.user-page .settings .media-change-box {
+  position: relative;
+  margin-left: 22px;
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .user-page .settings .media-change-box span {
-	font-family: 'GT Walsheim Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 18px;
-	color: #140342;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--espresso);
 }
 
 .user-page .settings .media-change-box p {
-	margin: 10px 0px 14px 0px;
-	font-family: 'GT Walsheim Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 16px;
-	color: #4f547b;
+  margin: 6px 0 12px 0;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 18px;
+  color: var(--muted);
 }
 
 .user-page .settings .up-del-box {
-	position: relative;
-	width: 37px;
-	height: 37px;
-	display: flex;
-	background: #cbcbcb;
-	border-radius: 8px;
-	justify-content: center;
-	align-items: center;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  background: var(--paprika);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 12px 22px -10px rgba(179, 69, 31, 0.9);
+  transition: transform 0.2s ease;
+}
+
+.user-page .settings .up-del-box:hover {
+  transform: translateY(-2px);
+}
+
+.user-page .settings .up-del-box .MuiButton-root {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  color: var(--cream);
+  box-shadow: none;
+  border-radius: 50%;
 }
 
 .user-page .settings .up-del-box input {
-	position: absolute;
-	width: 20px;
-	height: 16px;
-	padding: 0;
-	background: red;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	border: 0;
+  position: absolute;
+  width: 20px;
+  height: 16px;
+  padding: 0;
+  background: transparent;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 .user-page .settings .save-box {
-	display: flex;
-	justify-content: flex-end;
-	margin-top: 25px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 28px;
+}
+
+.user-page .settings .save-box .MuiButton-root {
+  min-width: 150px;
+  height: 48px;
+}
+
+@media (max-width: 1000px) {
+  .user-page .my-page-frame {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  .my-page-frame .my-page-right {
+    position: static;
+    width: 100%;
+  }
+  .user-page .settings .input-frame {
+    flex-direction: column;
+  }
+  .user-page .settings .short-input {
+    width: 100%;
+  }
 }

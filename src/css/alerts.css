@@ -1,0 +1,235 @@
+/* ============================================================
+   SWEETALERT2  (errors, success, warnings, toast)
+   espresso card · cream text · paprika actions
+   ============================================================ */
+
+body .swal2-container.swal2-backdrop-show {
+  background: rgba(42, 25, 16, 0.66);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.swal2-container .swal2-popup {
+  position: relative;
+  width: 27em;
+  max-width: 92vw;
+  padding: 2.4em 2em 2em;
+  overflow: hidden;
+  background: var(--paper, #faf4ea);
+  color: var(--espresso, #3b2418);
+  border: 1px solid rgba(59, 36, 24, 0.12);
+  border-radius: 28px;
+  font-family: var(--font-body, system-ui, sans-serif);
+  box-shadow:
+    0 40px 90px -24px rgba(42, 25, 16, 0.75),
+    0 0 0 6px rgba(242, 232, 218, 0.12);
+}
+
+/* paprika ribbon on top of every alert */
+.swal2-container .swal2-popup::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #e2764a, #b3451f, #e2764a);
+}
+
+.swal2-container .swal2-popup.swal2-show {
+  animation: burakAlertIn 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.25);
+}
+
+.swal2-container .swal2-popup.swal2-hide {
+  animation: burakAlertOut 0.2s ease forwards;
+}
+
+.swal2-container .swal2-title {
+  padding: 0.3em 0 0;
+  color: var(--espresso, #3b2418);
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 1.8em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.swal2-container .swal2-html-container {
+  margin: 0.7em 0 0;
+  padding: 0 0.4em;
+  color: var(--muted, #7d6150);
+  font-size: 1.02em;
+  line-height: 1.6;
+}
+
+.swal2-container .swal2-actions {
+  margin-top: 1.7em;
+  gap: 10px;
+}
+
+.swal2-container .swal2-styled {
+  margin: 0;
+  padding: 0.8em 1.9em;
+  border-radius: 999px;
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: 0.95em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.swal2-container .swal2-styled:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.swal2-container .swal2-styled:focus {
+  box-shadow: 0 0 0 4px rgba(179, 69, 31, 0.28);
+}
+
+.swal2-container .swal2-styled.swal2-confirm {
+  color: #f2e8da;
+  background: #b3451f;
+  box-shadow: 0 14px 24px -12px rgba(179, 69, 31, 0.9);
+}
+
+.swal2-container .swal2-styled.swal2-cancel {
+  color: #3b2418;
+  background: #e4d3bb;
+}
+
+.swal2-container .swal2-styled.swal2-deny {
+  color: #f2e8da;
+  background: #3b2418;
+}
+
+.swal2-container .swal2-close {
+  color: #7d6150;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.swal2-container .swal2-close:hover {
+  color: #b3451f;
+  background: rgba(179, 69, 31, 0.1);
+}
+
+.swal2-container .swal2-timer-progress-bar {
+  background: #b3451f;
+}
+
+/* icons in the brand colours */
+.swal2-container .swal2-icon {
+  margin: 0.4em auto 0.6em;
+}
+
+.swal2-container .swal2-icon.swal2-error {
+  color: #b3451f;
+  border-color: #b3451f;
+}
+
+.swal2-container .swal2-icon.swal2-error [class^="swal2-x-mark-line"] {
+  background-color: #b3451f;
+}
+
+.swal2-container .swal2-icon.swal2-warning {
+  color: #3b2418;
+  border-color: #3b2418;
+}
+
+.swal2-container .swal2-icon.swal2-question,
+.swal2-container .swal2-icon.swal2-info {
+  color: #7d6150;
+  border-color: #7d6150;
+}
+
+.swal2-container .swal2-icon.swal2-success {
+  color: #5f7a3a;
+  border-color: rgba(95, 122, 58, 0.45);
+}
+
+.swal2-container .swal2-icon.swal2-success [class^="swal2-success-line"] {
+  background-color: #5f7a3a;
+}
+
+.swal2-container .swal2-icon.swal2-success .swal2-success-ring {
+  border-color: rgba(95, 122, 58, 0.3);
+}
+
+/* the success tick uses patches that must match the card colour */
+.swal2-container .swal2-icon.swal2-success [class^="swal2-success-circular-line"],
+.swal2-container .swal2-icon.swal2-success .swal2-success-fix {
+  background: var(--paper, #faf4ea);
+}
+
+/* ---------- small toast (top right) ---------- */
+.swal2-container .swal2-popup.swal2-toast {
+  width: auto;
+  min-width: 18em;
+  padding: 0.9em 1.3em;
+  color: #f2e8da;
+  background: #3b2418;
+  border: 1px solid rgba(242, 232, 218, 0.16);
+  border-radius: 18px;
+  box-shadow: 0 24px 48px -18px rgba(42, 25, 16, 0.8);
+}
+
+.swal2-container .swal2-popup.swal2-toast::before {
+  top: auto;
+  bottom: 0;
+  height: 4px;
+}
+
+.swal2-container .swal2-popup.swal2-toast .swal2-title {
+  margin: 0 0.6em;
+  color: #f2e8da;
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.swal2-container .swal2-popup.swal2-toast .swal2-icon {
+  margin: 0;
+}
+
+.swal2-container .swal2-popup.swal2-toast .swal2-icon.swal2-success [class^="swal2-success-circular-line"],
+.swal2-container .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-fix {
+  background: #3b2418;
+}
+
+.swal2-container .swal2-popup.swal2-toast .swal2-icon.swal2-success {
+  color: #9db86b;
+  border-color: rgba(157, 184, 107, 0.45);
+}
+
+.swal2-container .swal2-popup.swal2-toast .swal2-icon.swal2-success [class^="swal2-success-line"] {
+  background-color: #9db86b;
+}
+
+.swal2-container .swal2-popup.swal2-toast .swal2-timer-progress-bar {
+  background: #e2764a;
+}
+
+@keyframes burakAlertIn {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.88);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes burakAlertOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+}

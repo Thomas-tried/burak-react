@@ -111,7 +111,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
                 ? chosenProduct?.productDesc
                 : "No Description"}
             </p>
-            <Divider height="1" width="100%" bg="#000000" />
+            <Divider height="1" width="100%" bg="rgba(59, 36, 24, 0.18)" />
             <div className={"product-price"}>
               <span>Price:</span>
               <span>{chosenProduct?.productPrice}</span>

@@ -21,20 +21,35 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 2, 2),
+    backgroundColor: "#faf4ea",
+    border: "none",
+    borderRadius: 28,
+    boxShadow: "0 40px 90px -20px rgba(0, 0, 0, 0.75)",
+    padding: theme.spacing(3),
+    outline: "none",
+    alignItems: "center",
+    "& h2": {
+      margin: "0 0 18px 0",
+      fontFamily: '"Fraunces", Georgia, serif',
+      fontWeight: 600,
+      fontSize: 34,
+      letterSpacing: "-0.02em",
+      color: "#3b2418",
+    },
+    "& .MuiButton-root, & .MuiFab-root": {
+      borderRadius: 999,
+    },
   },
 }));
 
 const ModalImg = styled.img`
-  width: 62%;
-  height: 100%;
-  border-radius: 10px;
-  background: #000;
-  margin-top: 9px;
-  margin-left: 10px;
+  width: 46%;
+  min-height: 380px;
+  object-fit: cover;
+  border-radius: 20px;
+  background: #3b2418;
+  margin: 0;
+  box-shadow: 0 24px 40px -20px rgba(59, 36, 24, 0.7);
 `;
 
 interface AuthenticationModalProps {
