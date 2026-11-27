@@ -9,10 +9,6 @@ import OtherNavbar from "./components/headers/OtherNavbar";
 import Footer from "./components/footer";
 import HelpPage from "./screens/helpPage";
 import useBasket from "./hooks/useBasket";
-import Test from "./screens/Test";
-import "../css/app.css";
-import "../css/navbar.css";
-import "../css/footer.css";
 import AuthenticationModal from "./components/auth";
 import {
   sweetErrorHandling,
@@ -22,6 +18,9 @@ import {
 import { Messages } from "../lib/config";
 import MemberService from "./services/MemberService";
 import { useGlobals } from "./hooks/useGlobals";
+import "../css/app.css";
+import "../css/navbar.css";
+import "../css/footer.css";
 
 function App() {
   const location = useLocation();

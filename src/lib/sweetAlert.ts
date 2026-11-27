@@ -1,5 +1,5 @@
 /** SweetAlertHandling **/
-import Swal from "sweetalert2";
+import Swal, { SweetAlertIcon } from "sweetalert2";
 import { Messages } from "./config";
 import "../css/alerts.css";
 
@@ -68,4 +68,37 @@ export const sweetFailureProvider = (
       window.location.replace(forward_url);
     }
   });
+};
+
+interface ConfirmOptions {
+  title?: string;
+  icon?: SweetAlertIcon;
+  confirmText?: string;
+  cancelText?: string;
+  confirmColor?: string;
+}
+
+export const sweetConfirmHandling = async (
+  text: string,
+  {
+    title = "Are you sure?",
+    icon = "warning",
+    confirmText = "Yes",
+    cancelText = "Cancel",
+    confirmColor = "#d33",
+  }: ConfirmOptions = {},
+): Promise<boolean> => {
+  const result = await Swal.fire({
+    title,
+    text,
+    icon,
+    showCancelButton: true,
+    confirmButtonText: confirmText,
+    cancelButtonText: cancelText,
+    confirmButtonColor: confirmColor,
+    cancelButtonColor: "#6c757d",
+    reverseButtons: true,
+    focusCancel: true,
+  });
+  return result.isConfirmed;
 };
